@@ -1,0 +1,22 @@
+
+<main class="signup__root">
+  <div class="signup__card">
+    <h1 class="signup__title">Регистрация</h1>
+    <form class="signup__form">
+      <div class="signup__form-input-container">
+        {{>input type="text" name="email" placeholder="Почта" value="" }}
+        {{>input type="text" name="login" placeholder="Логин" value="" }}
+        {{>input type="text" name="first_name" placeholder="Имя" value="" }}
+        {{>input type="text" name="second_name" placeholder="Фамилия" value="" }}
+        {{>input type="text" name="phone" placeholder="Телефон" value="" }}
+        {{>input type="password" name="password" placeholder="Пароль" value="" }}
+        {{>input type="password" name="password_confirm" placeholder="Пароль (еще раз)" value="" }}
+      </div>
+      <div>
+        {{>button type="submit" variant="primary" children="Зарегистрироваться"}}
+        {{>button variant="secondary" children="Войти" onclick="renderPage('signin')"}}
+      </div>
+    </form>
+  </div>
+</main>
+

@@ -1,0 +1,32 @@
+.profileField {
+  &__underline {
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  &__root {
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 13px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__input {
+    color: #999999;
+    border: none;
+    text-align: right;
+
+    &:focus-visible {
+      outline-color: transparent;
+      outline-style: auto;
+      outline-width: 0px;
+    }
+
+    &:hover {
+      cursor: text;
+    }
+  }
+}

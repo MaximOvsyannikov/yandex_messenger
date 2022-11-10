@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./src/fonts/Inter-Regular.woff") format("woff"),
+    url("./src/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./src/fonts/Inter-Bold.woff") format("woff"),
+    url("./src/fonts/Inter-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./src/fonts/Inter-Black.woff") format("woff"),
+    url("./src/fonts/Inter-Black.woff2") format("woff2");
+}
+
+@import "/src/pages/main/styles.scss";
+@import "/src/pages/chat/styles.scss";
+@import "/src/pages/signin/styles.scss";
+@import "/src/pages/signup/styles.scss";
+@import "/src/pages/error/styles.scss";
+@import "/src/pages/profile/styles.scss";
+
+@import "/src/components/button/button.scss";
+@import "/src/components/input/input.scss";
+@import "/src/components/profileField/profileField.scss";
+@import "/src/components/profileButton/profileButton.scss";
+@import "/src/components/avatar/avatar.scss";
+
+body {
+  font-family: "Inter", serif;
+}
