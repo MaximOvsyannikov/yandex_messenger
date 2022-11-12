@@ -1,6 +1,6 @@
 .input {
   width: 100%;
-  border-bottom: 1px solid #3369f3;
+  border-bottom: 1px solid var(--main-color);
   border-top: none;
   border-right: none;
   border-left: none;
@@ -11,7 +11,7 @@
   box-sizing: border-box;
 
   &::placeholder {
-    color: #999999;
+    color: var(--grey-color);
   }
 
   &:hover {

@@ -1,6 +1,6 @@
 .profileButton {
   &__underline {
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--grey-color);
   }
 
   &__root {
@@ -12,7 +12,7 @@
 
   &__button {
     background-color: transparent;
-    color: #3369f3;
+    color: var(--main-color);
     border: none;
     cursor: pointer;
   }

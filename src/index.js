@@ -12,6 +12,7 @@ import input from "./components/input/input.hbs";
 import profileField from "./components/profileField/profileField.hbs";
 import profileButton from "./components/profileButton/profileButton.hbs";
 import avatar from "./components/avatar/avatar.hbs";
+import messageInput from "./components/messageInput/messageInput.hbs";
 
 const PAGES = {
   main: {
@@ -75,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   Handlebars.registerPartial("profileField", profileField);
   Handlebars.registerPartial("profileButton", profileButton);
   Handlebars.registerPartial("avatar", avatar);
+  Handlebars.registerPartial("messageInput", messageInput);
 
   Handlebars.registerHelper("eq", (a, b) => a == b);
   Handlebars.registerHelper("noteq", (a, b) => a !== b);

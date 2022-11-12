@@ -1,4 +1,3 @@
-
 <main class="profile__root">
   <div class="profile__card">
     {{>avatar }}
@@ -24,7 +23,7 @@
       {{#if (eq view "info")}}
           {{>profileButton type="button" underline="true" children="Изменить данные"}}
           {{>profileButton type="button" underline="true" children="Изменить пароль"}}
-          {{>profileButton type="button" children="Выйти" style="color: red"}}
+          {{>profileButton type="button" children="Выйти" style="color: var(--error-color)"}}
       {{/if}}
       {{#if (noteq view "info")}}
         <div class="profile__form-button-container">
@@ -35,4 +34,3 @@
     </form>
   </div>
 </main>
-

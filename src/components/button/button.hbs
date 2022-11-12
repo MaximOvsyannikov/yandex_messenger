@@ -2,5 +2,7 @@
   type="{{type}}"
   {{#if style}} style="{{style}}" {{/if}}
   class="button button-{{variant}}"
-  onclick={{onclick}}
+  {{#if (noteq type "submit")}}
+    onclick={{onclick}}
+  {{/if}}
 >{{children}}</button>

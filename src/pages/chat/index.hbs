@@ -1,3 +1,16 @@
 <main class="chat__root">
-  <span>This is chat</span>
+  <div class="chat__chat-list-container">
+    <p>chat list</p>
+  </div>
+  <div class="chat__message-list-container">
+    <div class="chat__message-list">
+
+    </div>
+    <div class="chat__send-message-container">
+      {{> messageInput placeholder="Сообщение"}}
+      <div>
+        {{> button variant="primary" children="➤" style="height: 32px; margin-left: 10px; border-radius: 16px; padding: 2px 5px 0px 5px"}}
+      </div>
+    </div>
+  </div>
 </main>

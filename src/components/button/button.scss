@@ -11,16 +11,16 @@
   }
 
   &-primary {
-    color: #fff;
-    background-color: #3369f3;
+    color: var(--white-color);
+    background-color: var(--main-color);
 
     &:hover {
-      background-color: #2362eb;
+      background-color: var(--main-color-light);
     }
   }
 
   &-secondary {
-    color: #3369f3;
+    color: var(--main-color);
     background-color: transparent;
   }
 }

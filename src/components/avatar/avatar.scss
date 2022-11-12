@@ -2,7 +2,7 @@
   width: 130px;
   height: 130px;
   border: none;
-  background-color: #efefef;
+  background-color: var(--grey-color-light);
   border-radius: 65px;
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
     left: 0;
     width: 130px;
     height: 130px;
-    background-color: #000000;
+    background-color: var(--black-color);
     border-radius: 65px;
     opacity: 0;
     display: flex;
@@ -29,7 +29,7 @@
     }
 
     &-text {
-      color: #ffffff;
+      color: var(--white-color);
       opacity: 1;
     }
   }

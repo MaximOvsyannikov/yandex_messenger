@@ -34,7 +34,23 @@
 @import "/src/components/profileField/profileField.scss";
 @import "/src/components/profileButton/profileButton.scss";
 @import "/src/components/avatar/avatar.scss";
+@import "/src/components/messageInput/messageInput.scss";
 
-body {
+.body-root {
   font-family: "Inter", serif;
+  margin: 0px;
+}
+
+:root {
+  --main-color: #3369f3;
+  --main-color-light: #2362eb;
+
+  --grey-color-dark: #1e1e1e;
+  --grey-color: #999;
+  --grey-color-light: #efefef;
+
+  --white-color: #fff;
+  --black-color: #000;
+
+  --error-color: #ff0000;
 }

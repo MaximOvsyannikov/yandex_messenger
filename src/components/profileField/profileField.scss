@@ -1,6 +1,6 @@
 .profileField {
   &__underline {
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--grey-color);
   }
 
   &__root {
@@ -15,7 +15,7 @@
   }
 
   &__input {
-    color: #999999;
+    color: var(--grey-color);
     border: none;
     text-align: right;
 
