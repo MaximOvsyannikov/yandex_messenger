@@ -1,0 +1,36 @@
+<main class="profile__root">
+  <div class="profile__card">
+    {{>avatar }}
+    {{#if (eq view "info")}}
+      <p class="profile__title">Иван</p>
+    {{/if}}
+    <form class="profile__form">
+      <div class="profile__form-input-container">
+        {{#if (noteq view "password")}}
+          {{>profileField type="text" name="email" label="Почта" value="pochta@yandex.ru" underline="true" }}
+          {{>profileField type="text" name="login" label="Логин" value="ivanivanov" underline="true" }}
+          {{>profileField type="text" name="first_name" label="Имя" value="Иван" underline="true" }}
+          {{>profileField type="text" name="second_name" label="Фамилия" value="Иванов" underline="true" }}
+          {{>profileField type="text" name="display_name" label="Имя в чате" value="Иван" underline="true" }}
+          {{>profileField type="text" name="phone" label="Телефон" value="+7 (909) 967 30 30" }}
+        {{/if}}
+        {{#if (eq view "password")}}
+          {{>profileField type="password" name="oldPassword" label="Старый пароль" value="pochta@yandex.ru" underline="true" }}
+          {{>profileField type="password" name="newPassword" label="Новый пароль" value="ivanivanov" underline="true" }}
+          {{>profileField type="password" name="confirmNewPassword" label="Повторите новый пароль" value="Иван" }}
+        {{/if}}
+      </div>
+      {{#if (eq view "info")}}
+          {{>profileButton type="button" underline="true" children="Изменить данные"}}
+          {{>profileButton type="button" underline="true" children="Изменить пароль"}}
+          {{>profileButton type="button" children="Выйти" style="color: var(--error-color)"}}
+      {{/if}}
+      {{#if (noteq view "info")}}
+        <div class="profile__form-button-container">
+          {{>button type="button" variant="primary" children="Сохранить" style="width: 280px"}}
+        </div>
+      {{/if}}
+      </div>
+    </form>
+  </div>
+</main>

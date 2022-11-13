@@ -1,0 +1,19 @@
+.profileButton {
+  &__underline {
+    border-bottom: 1px solid var(--grey-color);
+  }
+
+  &__root {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: transparent;
+  }
+
+  &__button {
+    background-color: transparent;
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,26 @@
+.input {
+  width: 100%;
+  border-bottom: 1px solid var(--main-color);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  font-size: 13px;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--grey-color);
+  }
+
+  &:hover {
+    cursor: text;
+  }
+
+  &:focus-visible {
+    outline-color: transparent;
+    outline-style: auto;
+    outline-width: 0px;
+  }
+}

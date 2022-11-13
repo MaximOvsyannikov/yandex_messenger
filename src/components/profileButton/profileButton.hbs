@@ -1,0 +1,10 @@
+<div class="profileButton__root {{#if underline}} profileButton__underline {{/if}}">
+  <button
+    type="{{type}}"
+    class="profileButton__button"
+    {{#if style}} style="{{style}}" {{/if}}
+    onclick={{onclick}}
+  >
+    {{children}}
+  </button>
+</div>
