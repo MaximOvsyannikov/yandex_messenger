@@ -1,0 +1,12 @@
+.chatMessageList {
+  &__root {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

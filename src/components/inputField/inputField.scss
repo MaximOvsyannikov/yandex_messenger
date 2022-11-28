@@ -1,0 +1,12 @@
+.inputField {
+  &__root {
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  &__error-container {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+}
