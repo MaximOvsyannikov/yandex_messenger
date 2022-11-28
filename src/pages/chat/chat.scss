@@ -1,0 +1,25 @@
+.chat {
+  &__root {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-background-color-main);
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__chat-list-container {
+    width: 40%;
+    height: 100%;
+    background-color: var(--main-background-color-dark);
+    border-right: 1px solid var(--grey-color-light);
+  }
+
+  &__message-list-container {
+    flex-grow: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

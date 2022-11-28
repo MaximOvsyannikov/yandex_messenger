@@ -1,0 +1,32 @@
+.chatHeader {
+  &__root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-color-light);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+
+  &__avatar {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background-color: var(--grey-color-light);
+    border-radius: 50%;
+  }
+
+  &__chat-name {
+    flex-grow: 2;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

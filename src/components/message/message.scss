@@ -1,0 +1,50 @@
+.message {
+  &__root {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    &-my {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cloud {
+    font-size: 12px;
+    max-width: 40%;
+    padding: 11px;
+    background-color: var(--grey-color-light);
+    position: relative;
+    border-radius: 12px;
+
+    &-my {
+      background-color: var(--sky-blue);
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__time-place {
+    visibility: hidden;
+    width: 48px;
+    display: inline-block;
+  }
+
+  &__time {
+    font-size: 9px;
+    color: var(--grey-color);
+    position: absolute;
+    bottom: 0px;
+    right: 11px;
+
+    &-place {
+      width: 48px;
+    }
+
+    &-readed {
+      color: var(--main-color);
+    }
+  }
+}

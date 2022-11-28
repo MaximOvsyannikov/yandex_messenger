@@ -1,0 +1,15 @@
+.profileInput {
+  color: var(--grey-color);
+  border: none;
+  text-align: right;
+
+  &:focus-visible {
+    outline-color: transparent;
+    outline-style: auto;
+    outline-width: 0px;
+  }
+
+  &:hover {
+    cursor: text;
+  }
+}
