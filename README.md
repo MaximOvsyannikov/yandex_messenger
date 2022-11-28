@@ -33,3 +33,7 @@ npm run start
 ## Netlify
 
 - [Netlify deploy](https://voluble-zabaione-0a1092.netlify.app/)
+
+## Sprint 2 pull request link
+
+- [Sprint 2](https://github.com/MaximOvsyannikov/yandex_messenger/pull/3)
