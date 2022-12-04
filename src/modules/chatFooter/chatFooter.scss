@@ -1,0 +1,19 @@
+.chatFooter {
+  &__root {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    border-top: 1px solid var(--grey-color-light);
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  &__send-button {
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+    padding: 2px 5px 0px 5px;
+  }
+}

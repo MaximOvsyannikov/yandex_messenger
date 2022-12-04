@@ -1,0 +1,19 @@
+.profileLink {
+  &__root {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    padding-right: 10px;
+  }
+
+  &__link {
+    font-size: 12px;
+    color: var(--grey-color);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

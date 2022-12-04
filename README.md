@@ -1,6 +1,7 @@
 # yandex_messenger
 
-JS + handlebars
+TS + handlebars
+Block components, EventBus, Lint
 
 ## Installation
 
@@ -24,6 +25,12 @@ npm run build
 
 ```bash
 npm run start
+```
+
+## Lint check
+
+```bash
+npm run lint
 ```
 
 ## Figma resources
