@@ -1,0 +1,67 @@
+.avatarButton {
+  width: 130px;
+  height: 130px;
+  border: none;
+  background-color: var(--grey-color-light);
+  border-radius: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &__hover-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 130px;
+    background-color: var(--black-color);
+    border-radius: 65px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    &-text {
+      color: var(--white-color);
+      opacity: 1;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    &-card {
+      width: 340px;
+      background: var(--white-color);
+      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+      border-radius: 12px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      width: 100%;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--grey-color-dark);
+    }
+
+    &-input-container {
+      padding-top: 50px;
+      padding-bottom: 33px;
+    }
+  }
+}

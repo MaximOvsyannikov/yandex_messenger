@@ -4,3 +4,8 @@ export * as ChatItem from './chatItem';
 export * as ChatMessageList from './chatMessageList';
 export * as ChatSearchInput from './chatSearchInput';
 export * as ProfileLink from './profileLink';
+export * as AddChatButton from './addChatButton';
+export * as AddUserButton from './addUserButton';
+export * as DeleteUserButton from './deleteUserButton';
+export * as OneFieldForm from './oneFieldForm';
+export * as SelectChatDummy from './selectChatDummy';

@@ -1,9 +1,13 @@
+import ChatsController from '../../controllers/ChatsController';
 import Block from '../../utils/Block';
+import { formatDate } from '../../utils/helpers';
+import { withStore } from '../../utils/Store';
 import './chat.scss';
 
-export class ChatPage extends Block {
+export class ChatPageBase extends Block {
   constructor() {
     super();
+    ChatsController.fetchChats();
   }
 
   render() {
@@ -12,17 +16,52 @@ export class ChatPage extends Block {
               <div class="chat__chat-list-container">
                 {{{ProfileLink }}}
                 {{{ChatSearchInput placeholder="🔍 Поиск" value=""}}}
-                {{{ChatItem name="Андрей" message="Небольшое" count="2" time="23:55"}}}
-                {{{ChatItem name="Андрей" message="Средней длинны средней длинны" count="12332" time="23:55"}}}
-                {{{ChatItem name="Саша" message="ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ" count="0" time="07:00"}}}
-                {{{ChatItem name="ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ" message="ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ ОЧЕНЬ ДЛИННОЕ НАЗВАНИЕ" time="10:45"}}}
+                {{#each chats}}
+                  {{{ChatItem avatar=avatar
+                    id=id
+                    title=title
+                    last_message=last_message
+                    time=time
+                    unread_count=unread_count
+                    selected=selectedChat
+                    }}}
+                {{/each}}
+                <div class="chat__add-chat-button">
+                  {{{AddChatButton show=false }}}
+                </div>
               </div>
-              <div class="chat__message-list-container">
-                {{{ChatHeader name="Sanya"}}}
-                {{{ChatMessageList}}}
-                {{{ChatFooter}}}
-              </div>
+              {{#if selectedChat}}
+                <div class="chat__message-list-container">
+                  {{{ChatHeader name=name selectedChat=selectedChat}}}
+                  {{{ChatMessageList messages=messages}}}
+                  {{{ChatFooter selectedChat=selectedChat }}}
+                </div>
+              {{else}}
+                {{{SelectChatDummy}}}
+              {{/if}}
             </main>
   `;
   }
 }
+
+const withCharts = withStore((state) => ({
+  chats: (state.chats || []).map((el) => ({
+    ...el,
+    last_message: el.last_message
+      ? { ...el.last_message, time: formatDate(el.last_message.time) }
+      : el.last_message,
+    selectedChat: state.selectedChat,
+  })),
+  messages: state.selectedChat
+    ? ((state.messages || {})[state.selectedChat] || []).map((el) => ({
+        ...el,
+        time: formatDate(el.time),
+        isMine: el.user_id === state.user.id,
+      }))
+    : [],
+  selectedChat: state.selectedChat,
+  name:
+    (state.chats || []).find((el) => el.id === state.selectedChat)?.title || '',
+}));
+
+export const ChatPage = withCharts(ChatPageBase);

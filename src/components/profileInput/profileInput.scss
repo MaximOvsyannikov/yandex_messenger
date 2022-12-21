@@ -1,4 +1,5 @@
 .profileInput {
+  width: 100%;
   color: var(--grey-color);
   border: none;
   text-align: right;
@@ -7,6 +8,11 @@
     outline-color: transparent;
     outline-style: auto;
     outline-width: 0px;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    user-select: none;
   }
 
   &:hover {

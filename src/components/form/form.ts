@@ -1,8 +1,9 @@
 import Block from '../../utils/Block';
+import { escape } from '../../utils/helpers';
 
 export interface FormProps {
   class?: string;
-  onSubmit?: () => void;
+  onSubmit?: (data: any) => void;
 }
 
 export class Form extends Block {
@@ -20,10 +21,10 @@ export class Form extends Block {
           const formData = new FormData(form);
           const data: Record<string, any> = {};
           for (const pair of formData.entries()) {
-            data[pair[0]] = pair[1];
+            data[pair[0]] =
+              typeof pair[1] === 'string' ? escape(pair[1]) : pair[1];
           }
-          console.log(data);
-          onSubmit?.();
+          onSubmit?.(data);
         },
       },
     });

@@ -2,10 +2,12 @@ import Block from '../../utils/Block';
 import './message.scss';
 
 export interface MessageProps {
-  my: boolean;
+  isMine: boolean;
   readed: boolean;
   time: string;
-  text: string;
+  content: string;
+  user_id: string;
+  type: string;
 }
 
 export class Message extends Block {
@@ -14,10 +16,15 @@ export class Message extends Block {
   }
 
   render() {
+    if (this.props.type === 'user connected') {
+      return `<p class='message__user-connected'>User {{content}} connected</p>`;
+    }
+
     return `
-            <div class='message__root {{#if my}} message__root-my {{/if}}'>
-              <div class='message__cloud {{#if my}} message__cloud-my {{/if}}'>
-                <p class='message__text'>{{text}}<span class='message__time-place'></span></p>
+            <div class='message__root {{#if isMine}} message__root-my {{/if}}'>
+              <div class='message__cloud {{#if isMine}} message__cloud-my {{/if}}'>
+                {{#unless isMine}}<p class='message__user'>{{user_id}}</p>{{/unless}}
+                <p class='message__text'>{{content}}<span class='message__time-place'></span></p>
                 
                 <p class='message__time {{#if readed}} message__time-readed {{/if}}'>
                   {{#if readed}}

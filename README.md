@@ -2,6 +2,7 @@
 
 TS + handlebars
 Block components, EventBus, Lint
+Routing, Store, Controllers, API, Socket
 
 ## Installation
 

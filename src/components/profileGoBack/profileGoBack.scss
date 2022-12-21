@@ -1,0 +1,10 @@
+.profileGoBack {
+  background-color: var(--main-background-color-dark);
+  border-right: 1px solid var(--grey-color-light);
+  height: 100vh;
+  width: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.selectChatDummy {
+  flex-grow: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 18px;
+    color: var(--grey-color);
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.linkComponent {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 13px;
+  color: var(--main-color);
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--main-color-light);
+  }
+}
