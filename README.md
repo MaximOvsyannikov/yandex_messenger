@@ -44,3 +44,8 @@ npm run lint
 ## Sprint 2 pull request link
 
 - [Sprint 2](https://github.com/MaximOvsyannikov/yandex_messenger/pull/3)
+
+## Sprint 3 pull request link
+
+- [Sprint 3](https://github.com/MaximOvsyannikov/yandex_messenger/pull/4)
+
