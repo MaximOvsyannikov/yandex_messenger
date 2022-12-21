@@ -17,6 +17,11 @@
     &:hover {
       background-color: var(--main-color-light);
     }
+
+    &:disabled {
+      background-color: #cccccc;
+      color: #666666;
+    }
   }
 
   &-secondary {

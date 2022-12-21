@@ -9,6 +9,12 @@
     }
   }
 
+  &__user-connected {
+    font-size: 12px;
+    color: var(--grey-color);
+    margin: 0px;
+  }
+
   &__cloud {
     font-size: 12px;
     max-width: 40%;
@@ -20,6 +26,11 @@
     &-my {
       background-color: var(--sky-blue);
     }
+  }
+
+  &__user {
+    font-weight: 600;
+    margin: 0;
   }
 
   &__text {

@@ -2,7 +2,7 @@ import Block from '../../utils/Block';
 
 export interface FormProps {
   class?: string;
-  onSubmit?: () => void;
+  onSubmit?: (data: any) => void;
 }
 
 export class Form extends Block {
@@ -22,8 +22,7 @@ export class Form extends Block {
           for (const pair of formData.entries()) {
             data[pair[0]] = pair[1];
           }
-          console.log(data);
-          onSubmit?.();
+          onSubmit?.(data);
         },
       },
     });

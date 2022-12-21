@@ -3,6 +3,7 @@ import './chatHeader.scss';
 
 export interface ChatHeaderProps {
   name: string;
+  selectedChat: number;
 }
 
 export class ChatHeader extends Block {
@@ -23,7 +24,7 @@ export class ChatHeader extends Block {
               </div>
               <p class='chatHeader__chat-name'>{{name}}</p>
               <div class='chatHeader__options'>
-                🌶️
+                {{{MenuButton show=false selectedChat=selectedChat }}}
               </div>
             </div>
   `;

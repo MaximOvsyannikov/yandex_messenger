@@ -26,7 +26,7 @@ class Block<P extends Record<string, unknown> = any> {
   private _element: HTMLElement | null = null;
   private _meta: { props: any };
 
-  protected props: Props<P>;
+  public props: Props<P>;
   protected children: Record<string, Block>;
   private eventBus: () => EventBus<BlockEvents<Props<P>>>;
 
@@ -87,18 +87,31 @@ class Block<P extends Record<string, unknown> = any> {
   }
 
   init() {
+    this.eventBus().emit(Block.EVENTS.FLOW_CDM);
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
   _componentDidMount() {
     this.componentDidMount();
+
+    Object.values(this.children).forEach((child) => {
+      child.dispatchComponentDidMount();
+    });
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   componentDidMount() {}
 
-  dispatchComponentDidMount() {
+  public dispatchComponentDidMount() {
     this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+
+    Object.values(this.children).forEach((child) => {
+      if (Array.isArray(child)) {
+        child.forEach((ch) => ch.dispatchComponentDidMount());
+      } else {
+        child.dispatchComponentDidMount();
+      }
+    });
   }
 
   _componentDidUpdate(oldProps: Props<P>, newProps: Props<P>) {

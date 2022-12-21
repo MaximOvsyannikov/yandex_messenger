@@ -2,8 +2,14 @@
   &__root {
     width: 100vw;
     height: 100vh;
+    display: flex;
+  }
+
+  &__card-container {
     background-color: var(--white-color);
     display: flex;
+    flex-grow: 2;
+    height: 100vh;
     justify-content: center;
     align-items: center;
   }
