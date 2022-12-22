@@ -1,6 +1,5 @@
 import ChatsController from '../../controllers/ChatsController';
 import Block from '../../utils/Block';
-import store from '../../utils/Store';
 import './chatItem.scss';
 
 export interface ChatItemProps {
@@ -25,7 +24,6 @@ export class ChatItem extends Block {
       events: {
         click: () => {
           ChatsController.selectChat(props.id);
-          console.log({ store });
         },
       },
     });

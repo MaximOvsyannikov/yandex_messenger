@@ -2,6 +2,10 @@ import API, { ChatsAPI } from '../api/ChatsApi';
 import store from '../utils/Store';
 import MessagesController from './MessagesController';
 
+export interface CreateChartFormData {
+  title: string;
+}
+
 class ChatsController {
   private readonly api: ChatsAPI;
 
@@ -9,7 +13,7 @@ class ChatsController {
     this.api = API;
   }
 
-  async create(data: { title: string }) {
+  async create(data: CreateChartFormData) {
     const { id: chatId } = await this.api.create(data);
     this.fetchChats().then(() => {
       this.selectChat(chatId);

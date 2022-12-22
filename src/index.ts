@@ -10,7 +10,7 @@ import store, { StoreEvents } from './utils/Store';
 
 enum Routes {
   Index = '/',
-  Register = '/register',
+  Register = '/sign-up',
   Profile = '/settings',
   ProfilePassword = '/settings/password',
   ProfileUpdate = '/settings/update',

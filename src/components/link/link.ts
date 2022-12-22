@@ -14,7 +14,10 @@ export class Link extends Block {
     super({
       ...props,
       events: {
-        click: () => this.navigate(),
+        click: (e: MouseEvent) => {
+          e.preventDefault();
+          this.navigate();
+        },
       },
     });
   }
@@ -25,12 +28,12 @@ export class Link extends Block {
 
   render() {
     return `
-            <span
+            <a
               {{#if style}} style="{{style}}" {{/if}}
-              class="linkComponent {{#if class}}{{class}}{{/if}}"
+              class="linkComponent {{class}}"
             >
               {{label}}
-            </span>
+            </a>
   `;
   }
 }

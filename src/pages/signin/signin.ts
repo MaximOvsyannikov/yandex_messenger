@@ -33,7 +33,7 @@ export class SigninPage extends Block {
               {{{FieldError text="" isValid=true ref="errorText"}}}
             </p>
             {{{Button type="submit" variant="primary" label="Авторизоваться"}}}
-            {{{Link to="/register" label="Нет аккаунта?"}}}
+            {{{Link to="/sign-up" label="Нет аккаунта?"}}}
           </div>
         {{/Form}}
       </div>
