@@ -1,4 +1,6 @@
-import ChatsController from '../../controllers/ChatsController';
+import ChatsController, {
+  CreateChartFormData,
+} from '../../controllers/ChatsController';
 import Block from '../../utils/Block';
 import './addChatButton.scss';
 
@@ -12,7 +14,7 @@ export class AddChatButton extends Block {
       hideDialog: () => {
         this.setProps({ show: false });
       },
-      onSubmit: (data: { title: string }) => {
+      onSubmit: (data: CreateChartFormData) => {
         ChatsController.create(data).then(() => {
           this.setProps({ show: false });
         });

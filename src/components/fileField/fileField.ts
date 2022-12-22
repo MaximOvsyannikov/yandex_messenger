@@ -11,8 +11,10 @@ export class FileField extends Block {
       ...props,
       onChange: (e: any) => {
         if (!e.target.files[0]) return;
-        this.setProps({ fileName: e.target.files[0].name });
-        this.setProps({ file: e.target.files[0] });
+        this.setProps({
+          fileName: e.target.files[0].name,
+          file: e.target.files[0],
+        });
       },
     });
   }

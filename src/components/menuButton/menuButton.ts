@@ -47,4 +47,3 @@ export class MenuButton extends Block {
   `;
   }
 }
-// {{{UserMenuButton show=false label="Удалить пользователя"}}}
