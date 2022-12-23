@@ -6,6 +6,7 @@ export interface ButtonProps {
   label: string;
   class?: string;
   style?: string;
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -24,7 +25,8 @@ export class Button extends Block {
             <button
               type="{{type}}"
               {{#if style}} style="{{style}}" {{/if}}
-              class="button button-{{variant}} {{#if class}}{{class}}{{/if}}"
+              class="button button-{{variant}} {{class}}"
+              {{#if disabled}} disabled {{/if}}
             >
               {{label}}
             </button>

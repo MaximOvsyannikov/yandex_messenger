@@ -32,7 +32,7 @@ class Validator {
 
   passwordConfirm(value: string): [boolean, string] {
     return [
-      this.formData?.get('password') === value,
+      this.formData?.get('newPassword') === value,
       'Пароль должен совпадать',
     ];
   }

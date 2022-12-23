@@ -1,18 +1,29 @@
+import { Message } from '../../controllers/MessagesController';
 import Block from '../../utils/Block';
 import './chatMessageList.scss';
 
+interface Props {
+  messages: (Message & { isMine: boolean })[];
+}
+
 export class ChatMessageList extends Block {
-  constructor() {
-    super();
+  constructor(props: Props) {
+    super({ ...props });
   }
 
   render() {
     return `
     <div class='chatMessageList__root'>
-      {{{Message text="jbvkjebvbbej" my="true" time="10:43" readed="true"}}}
-      {{{ChartDate text="19 июня" }}}
-      {{{Message text="jbvkjebvbbej" time="10:43"}}}
-      {{{Message text="very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long very long " my="true" time="10:43" readed="true"}}}
+      {{#each messages}}
+        {{{Message
+          content=content
+          isMine=isMine
+          time=time
+          type=type
+          user_id=user_id
+          readed="true"
+        }}}
+      {{/each}}
     </div>
   `;
   }

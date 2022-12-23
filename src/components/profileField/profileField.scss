@@ -3,6 +3,10 @@
     border-bottom: 1px solid var(--grey-color);
   }
 
+  &__label {
+    white-space: nowrap;
+  }
+
   &__root {
     width: 100%;
     position: relative;

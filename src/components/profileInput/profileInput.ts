@@ -4,6 +4,7 @@ import './profileInput.scss';
 export interface ProfileInputProps {
   type?: string;
   placeholder?: string;
+  disabled?: boolean;
   name: string;
   value: string;
   onFocus?: () => void;
@@ -28,6 +29,7 @@ export class ProfileInput extends Block {
       <input
         type="{{type}}"
         class="profileInput"
+        {{#if disabled}} disabled {{/if}}
         name="{{name}}"
         value="{{value}}"
         placeholder="{{placeholder}}"

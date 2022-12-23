@@ -7,6 +7,10 @@
       cursor: pointer;
       background-color: var(--sky-blue);
     }
+
+    &-selected {
+      background-color: var(--sky-blue);
+    }
   }
 
   &__container {
@@ -18,12 +22,18 @@
     gap: 10px;
   }
 
+  &__avatar-container {
+    width: 47px;
+    height: 47px;
+  }
+
   &__avatar {
     width: 47px;
     height: 47px;
     border: none;
     background-color: var(--grey-color-light);
     border-radius: 50%;
+    overflow: hidden;
   }
 
   &__info-container {

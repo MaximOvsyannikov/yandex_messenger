@@ -1,68 +1,62 @@
 import * as Components from './components';
+import AuthController from './controllers/AuthController';
 import * as Modules from './modules';
 import * as Pages from './pages';
 import Block from './utils/Block';
 import { registerHelpers } from './utils/helpers';
 import { registerComponent } from './utils/RegisterComponent';
+import Router from './utils/Router';
+import store, { StoreEvents } from './utils/Store';
 
-const PAGES = [
-  {
-    label: 'chat',
-    onClick: () => {
-      renderPage(new Pages.ChatPage.default());
-    },
-  },
-  {
-    label: 'signin',
-    onClick: () => {
-      renderPage(new Pages.SigninPage.default());
-    },
-  },
-  {
-    label: 'signup',
-    onClick: () => {
-      renderPage(new Pages.SignupPage.default());
-    },
-  },
-  {
-    label: '500',
-    onClick: () => {
-      renderPage(
-        new Pages.ErrorPage.default({
-          title: '500',
-          text: 'Мы уже фиксим',
-        })
-      );
-    },
-  },
-  {
-    label: '400',
-    onClick: () => {
-      renderPage(
-        new Pages.ErrorPage.default({
-          title: '400',
-          text: 'Не туда попали',
-        })
-      );
-    },
-  },
-  {
-    label: 'profile',
-    onClick: () => {
-      renderPage(new Pages.ProfilePage.default({ view: 'info' }));
-    },
-  },
-];
+enum Routes {
+  Index = '/',
+  Register = '/sign-up',
+  Profile = '/settings',
+  ProfilePassword = '/settings/password',
+  ProfileUpdate = '/settings/update',
+  Chat = '/messenger',
+}
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   registerHelpers();
   Object.values({ ...Components, ...Modules }).forEach((Component) =>
     registerComponent(Component.default as typeof Block)
   );
-  renderPage(new Pages.MainPage.default({ pages: PAGES }));
-});
 
-const renderPage = (page: Block) => {
-  const root = document.querySelector('#app');
-  root?.replaceChildren(page.getContent()!);
-};
+  Router.use(Routes.Index, new Pages.SigninPage.default())
+    .use(Routes.Register, new Pages.SignupPage.default())
+    .use(Routes.Profile, new Pages.ProfilePage.default({}))
+    .use(
+      Routes.ProfilePassword,
+      new Pages.ProfilePage.default({ view: 'password' })
+    )
+    .use(
+      Routes.ProfileUpdate,
+      new Pages.ProfilePage.default({ view: 'update' })
+    )
+    .use(Routes.Chat, new Pages.ChatPage.default({}));
+
+  let isProtectedRoute = true;
+
+  switch (window.location.pathname) {
+    case Routes.Index:
+    case Routes.Register:
+      isProtectedRoute = false;
+      break;
+  }
+
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    store.on(StoreEvents.Updated, () => {});
+    await AuthController.fetchUser();
+    Router.start();
+    if (!isProtectedRoute) {
+      Router.go(Routes.Chat);
+    }
+  } catch (e) {
+    Router.start();
+    if (isProtectedRoute) {
+      Router.go(Routes.Index);
+    }
+  }
+});

@@ -9,6 +9,7 @@ export interface ProfileFieldProps {
   placeholder: string;
   label: string;
   underline: boolean;
+  disabled?: boolean;
   validation: ValidationType;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -59,7 +60,7 @@ export class ProfileField extends Block {
           <div class="profileField__root">
             <div class="profileField__container {{#if underline}} profileField__underline {{/if}}">
               <span class="profileField__label">{{label}}</span>
-              {{{ProfileInput type=type name=name placeholder=placeholder value=value onFocus=onFocus onBlur=onBlur onChange=onChange}}}
+              {{{ProfileInput type=type disabled=disabled name=name placeholder=placeholder value=value onFocus=onFocus onBlur=onBlur onChange=onChange}}}
               <div class="profileField__error-container">
                 {{{FieldError text="" isValid=true ref="errorText"}}}
               </div>

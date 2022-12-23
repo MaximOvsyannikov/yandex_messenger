@@ -1,0 +1,31 @@
+.oneFieldForm {
+  &__card {
+    width: 340px;
+    background: var(--white-color);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--grey-color-dark);
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__form-input-container {
+    padding-top: 50px;
+    padding-bottom: 33px;
+  }
+}
