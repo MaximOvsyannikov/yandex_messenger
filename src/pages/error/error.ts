@@ -17,7 +17,7 @@ export class ErrorPage extends Block {
           <div class="error__card">
             <h1 class="error__title">{{title}}</h1>
             <p class="error__text">{{text}}</p>
-            <a class="error__link" onclick="renderPage('chat')">Назад к чатам</a>
+            {{{Link to="/messenger" label="Назад к чатам"}}}
           </div>
         </main>
   `;
