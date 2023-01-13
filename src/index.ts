@@ -7,6 +7,7 @@ import { registerHelpers } from './utils/helpers';
 import { registerComponent } from './utils/RegisterComponent';
 import Router from './utils/Router';
 import store, { StoreEvents } from './utils/Store';
+import './index.scss';
 
 enum Routes {
   Index = '/',
@@ -15,6 +16,8 @@ enum Routes {
   ProfilePassword = '/settings/password',
   ProfileUpdate = '/settings/update',
   Chat = '/messenger',
+  Error404 = '/404',
+  Error500 = '/500',
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -34,7 +37,15 @@ document.addEventListener('DOMContentLoaded', async () => {
       Routes.ProfileUpdate,
       new Pages.ProfilePage.default({ view: 'update' })
     )
-    .use(Routes.Chat, new Pages.ChatPage.default({}));
+    .use(Routes.Chat, new Pages.ChatPage.default({}))
+    .use(
+      Routes.Error404,
+      new Pages.ErrorPage.default({ title: '404', text: 'Не туда попали' })
+    )
+    .use(
+      Routes.Error500,
+      new Pages.ErrorPage.default({ title: '500', text: 'Мы уже фиксим' })
+    );
 
   let isProtectedRoute = true;
 

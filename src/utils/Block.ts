@@ -1,4 +1,4 @@
-import EventBus from './EventBus';
+import { EventBus } from './EventBus';
 import { v4 } from 'uuid';
 import Handlebars from 'handlebars';
 
@@ -24,7 +24,6 @@ class Block<P extends Record<string, unknown> = any> {
   public id = v4();
 
   private _element: HTMLElement | null = null;
-  private _meta: { props: any };
 
   public props: Props<P>;
   protected children: Record<string, Block>;
@@ -47,9 +46,6 @@ class Block<P extends Record<string, unknown> = any> {
     this.children = children;
 
     this.props = this._makePropsProxy(props) as Props<P>;
-    this._meta = {
-      props,
-    };
     this.initChildren();
 
     this.eventBus = () => eventBus;
