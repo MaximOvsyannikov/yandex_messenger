@@ -79,19 +79,19 @@ class Router {
   }
 
   private _onRoute(pathname: string) {
-    const route = this.getRoute(pathname);
+    let route = this.getRoute(pathname);
 
     if (!route) {
-      return;
+      route = this.getRoute('/404');
     }
 
     if (this.currentRoute && this.currentRoute !== route) {
       this.currentRoute.leave();
     }
 
-    this.currentRoute = route;
+    this.currentRoute = route!;
 
-    route.render();
+    route!.render();
   }
 
   public go(pathname: string) {

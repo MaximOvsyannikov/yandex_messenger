@@ -1,5 +1,5 @@
 import { set } from './helpers';
-import EventBus from './EventBus';
+import { EventBus } from './EventBus';
 import Block from './Block';
 import { User } from '../api/AuthApi';
 import { ChatData } from '../api/ChatsApi';
